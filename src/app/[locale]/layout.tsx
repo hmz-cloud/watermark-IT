@@ -21,6 +21,9 @@ const plexArabic = IBM_Plex_Sans_Arabic({
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
 
+// Static export: only the locales below exist; anything else is a 404.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }

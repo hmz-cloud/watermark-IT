@@ -12,7 +12,18 @@ import type { NextConfig } from "next";
  */
 const requestConfig = "./src/i18n/request.ts";
 
+/*
+ * GitHub Pages hosting: the site is exported as plain static files to ./out.
+ * PAGES_BASE_PATH is set by the deploy workflow (e.g. "/watermark-IT") because
+ * project sites are served from a sub-path. Locally it is empty.
+ */
+const basePath = process.env.PAGES_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
+  output: "export",
+  basePath,
+  // /en/ → out/en/index.html, which GitHub Pages serves without extra config.
+  trailingSlash: true,
   turbopack: {
     resolveAlias: {
       // Turbopack needs a relative path here.
