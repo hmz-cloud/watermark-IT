@@ -19,7 +19,7 @@ export function Footer() {
     <footer className="on-navy bg-navy-900 text-on-navy">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <Logo name={tcommon("companyName")} tone="light" />
+          <Logo name={tcommon("companyName")} tagline={tcommon("tagline")} tone="light" />
           <p className="mt-4 max-w-sm leading-relaxed">{t("about")}</p>
         </div>
 

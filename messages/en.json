@@ -5,7 +5,8 @@
   },
   "Common": {
     "companyName": "Watermark IT",
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "tagline": "for Information Technology Infrastructure"
   },
   "Nav": {
     "home": "Home",
@@ -75,15 +76,15 @@
     "items": {
       "certified": {
         "title": "Certified engineers",
-        "description": "Every installation is designed and signed off by qualified engineers, not handed to subcontractors."
+        "description": "Highly qualified and experienced consultants, engineers and technicians design and sign off every installation."
       },
       "planning": {
         "title": "End-to-end planning",
-        "description": "Site survey, design, supply, installation and testing, delivered by one accountable team."
+        "description": "We plan, implement and follow up your IT project, from site survey and design to supply, installation and testing."
       },
       "support": {
         "title": "Post-delivery support",
-        "description": "Clear documentation, staff handover and a direct line to the engineer who built your system."
+        "description": "Technical and engineering support continues after delivery, with a direct line to the engineer who built your system."
       }
     }
   },
@@ -92,7 +93,7 @@
     "subtitle": "Send the details and we'll reply on WhatsApp, usually within one working day.",
     "infoTitle": "Talk to an engineer",
     "contactPerson": "Eng. Salah Hassan Altoum",
-    "contactRole": "Projects & sales",
+    "contactRole": "Engineer",
     "phoneLabel": "Phone",
     "whatsappLabel": "WhatsApp",
     "locationLabel": "Location",
@@ -131,7 +132,7 @@
     }
   },
   "Footer": {
-    "about": "IT infrastructure and low current systems for homes and businesses in Riyadh.",
+    "about": "Technical and engineering support for IT infrastructure: planning, implementation and follow-up before and after delivery.",
     "quickLinks": "Company",
     "servicesTitle": "Services",
     "contactTitle": "Contact",

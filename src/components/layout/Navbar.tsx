@@ -79,7 +79,7 @@ export function Navbar() {
     >
       <Container className="flex h-18 items-center justify-between gap-6">
         <Link href="/" aria-label={tc("companyName")} className="rounded-md" onClick={close}>
-          <Logo name={tc("companyName")} />
+          <Logo name={tc("companyName")} tagline={tc("tagline")} />
         </Link>
 
         <nav aria-label={t("mainNav")} className="hidden lg:block">
@@ -98,13 +98,14 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <LanguageSwitcher className="hidden sm:inline-flex" />
-          <Link
-            href={{ pathname: "/", hash: sectionIds.contact }}
-            className={buttonClasses("primary", "md", "hidden sm:inline-flex")}
-          >
-            {t("getQuote")}
-          </Link>
+          {/* Visibility lives on a wrapper: putting `hidden` next to the
+              components' own `inline-flex` class lets inline-flex win. */}
+          <div className="hidden items-center gap-2 sm:flex">
+            <LanguageSwitcher />
+            <Link href={{ pathname: "/", hash: sectionIds.contact }} className={buttonClasses("primary", "md")}>
+              {t("getQuote")}
+            </Link>
+          </div>
           <button
             ref={toggleRef}
             type="button"

@@ -23,7 +23,7 @@ npm run lint
 | Locale redirect (Next 16 "proxy", formerly middleware) | `src/proxy.ts` |
 | Page sections | `src/components/sections/*` |
 | Navbar, footer, language switch | `src/components/layout/*` |
-| Logo (placeholder SVG) | `src/components/brand/Logo.tsx` |
+| Logo (vector redraw of the business-card mark; swap in the designer's SVG when available) | `src/components/brand/Logo.tsx` |
 
 ## Notes
 

@@ -3,7 +3,7 @@
 /*
  * Watermark IT design tokens.
  * Flat style: no drop shadows, structure comes from 1px lines and tone changes.
- * Cyan is an accent for navy surfaces only — it fails contrast as text on white.
+ * Sky (the globe highlight from the business card) is an accent for navy surfaces only — it fails contrast as text on white.
  */
 @theme {
   /* Brand */
@@ -14,8 +14,8 @@
   --color-brand: #2b6cb0;
   --color-brand-700: #245a94;
   --color-brand-50: #eaf2fb;
-  --color-cyan: #4fd1c5;
-  --color-cyan-300: #8ee3db;
+  --color-cyan: #5bc0eb;
+  --color-cyan-300: #9ad8f5;
 
   /* Neutrals (cool, tuned to the navy) */
   --color-paper: #f4f7fb;

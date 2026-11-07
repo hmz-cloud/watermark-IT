@@ -30,7 +30,7 @@ export function HeroSchematic({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 560 480" className={className} aria-hidden="true" focusable="false">
       {/* Cable runs */}
-      <g fill="none" stroke="#4FD1C5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <g fill="none" stroke="#5BC0EB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         {runs.map((r, i) => (
           <path key={i} d={r.d} pathLength={1} className="trace" style={v(r.delay)} opacity="0.85" />
         ))}
@@ -51,7 +51,7 @@ export function HeroSchematic({ className }: { className?: string }) {
                 width="14"
                 height="14"
                 rx="2"
-                fill={live ? "#4FD1C5" : "#24447F"}
+                fill={live ? "#5BC0EB" : "#24447F"}
                 className="node"
                 style={v(0.9 + (row * 6 + col) * 0.02)}
               />
@@ -64,8 +64,8 @@ export function HeroSchematic({ className }: { className?: string }) {
       <g>
         {devices.map(([x, y], i) => (
           <g key={i} className="node" style={v(0.2 + i * 0.08)}>
-            <circle cx={x} cy={y} r="11" fill="#0D1F45" stroke="#4FD1C5" strokeWidth="1.5" />
-            <circle cx={x} cy={y} r="3.5" fill="#4FD1C5" />
+            <circle cx={x} cy={y} r="11" fill="#0D1F45" stroke="#5BC0EB" strokeWidth="1.5" />
+            <circle cx={x} cy={y} r="3.5" fill="#5BC0EB" />
           </g>
         ))}
       </g>
@@ -73,7 +73,7 @@ export function HeroSchematic({ className }: { className?: string }) {
       {/* Stray pixels breaking off the panel, echoing the logo */}
       <g fill="#2B6CB0">
         <rect x="396" y="122" width="10" height="10" rx="1.5" className="node" style={v(1.4)} />
-        <rect x="412" y="104" width="7" height="7" rx="1" className="node" style={v(1.5)} fill="#4FD1C5" />
+        <rect x="412" y="104" width="7" height="7" rx="1" className="node" style={v(1.5)} fill="#5BC0EB" />
         <rect x="424" y="120" width="5" height="5" rx="1" className="node" style={v(1.6)} />
       </g>
     </svg>
