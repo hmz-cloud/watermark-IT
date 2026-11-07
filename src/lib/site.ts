@@ -7,7 +7,7 @@ export const site = {
   phoneHref: "tel:+966538917030",
   // wa.me expects the number in international format without "+" or spaces.
   whatsappNumber: "966538917030",
-  email: "info@watermark-it.sa", // placeholder — replace with the real mailbox
+  email: "info@watermark-it.com", // placeholder — replace with the real mailbox
   vatNumber: null as string | null,
   crNumber: null as string | null,
 } as const;
