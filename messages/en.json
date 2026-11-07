@@ -1,0 +1,147 @@
+{
+  "Meta": {
+    "title": "Watermark IT | IT Infrastructure & Low Current Solutions in Riyadh",
+    "description": "Network cabling, CCTV, access control, POS, smart homes and IT support for businesses in Riyadh. Planned, installed and supported by certified engineers."
+  },
+  "Common": {
+    "companyName": "Watermark IT",
+    "skipToContent": "Skip to content"
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "whyUs": "Why us",
+    "contact": "Contact",
+    "getQuote": "Get a quote",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main navigation",
+    "switchLanguage": "عربي",
+    "switchLanguageLabel": "Switch to Arabic"
+  },
+  "Hero": {
+    "location": "Riyadh, Saudi Arabia",
+    "title": "Comprehensive IT Infrastructure & Low Current Solutions in Riyadh",
+    "subtitle": "We design, install and maintain the networks, cameras, access systems and devices your business runs on, from the first site survey to support after handover.",
+    "primaryCta": "Get a quote",
+    "secondaryCta": "Chat on WhatsApp",
+    "points": {
+      "survey": "Free site survey before every quote",
+      "engineers": "Work led by certified engineers",
+      "bilingual": "Support in Arabic and English"
+    }
+  },
+  "Services": {
+    "title": "What we install and support",
+    "subtitle": "One team for the cabling in your walls and the devices on your desks.",
+    "items": {
+      "networking": {
+        "title": "IT networking",
+        "description": "Structured cabling, switches, Wi-Fi and server rooms built for growth."
+      },
+      "elv": {
+        "title": "Low current / ELV",
+        "description": "Fire alarm, PA, intercom and data systems routed and labelled to code."
+      },
+      "cctv": {
+        "title": "CCTV surveillance",
+        "description": "IP cameras, NVR recording and remote viewing from your phone."
+      },
+      "access": {
+        "title": "Access control",
+        "description": "Card, fingerprint and face readers with attendance reports."
+      },
+      "pos": {
+        "title": "POS systems",
+        "description": "Point-of-sale terminals, printers and scanners for retail and restaurants."
+      },
+      "smartHome": {
+        "title": "Smart homes",
+        "description": "Lighting, climate, curtains and security controlled from one app."
+      },
+      "support": {
+        "title": "Technical support",
+        "description": "On-site and remote help, preventive maintenance and annual contracts."
+      },
+      "hardware": {
+        "title": "Hardware supply",
+        "description": "Computers, servers, printers and network gear from trusted brands."
+      }
+    }
+  },
+  "WhyUs": {
+    "title": "Why businesses in Riyadh work with us",
+    "subtitle": "We stay with the project from planning to the day after handover.",
+    "items": {
+      "certified": {
+        "title": "Certified engineers",
+        "description": "Every installation is designed and signed off by qualified engineers, not handed to subcontractors."
+      },
+      "planning": {
+        "title": "End-to-end planning",
+        "description": "Site survey, design, supply, installation and testing, delivered by one accountable team."
+      },
+      "support": {
+        "title": "Post-delivery support",
+        "description": "Clear documentation, staff handover and a direct line to the engineer who built your system."
+      }
+    }
+  },
+  "Contact": {
+    "title": "Tell us about your project",
+    "subtitle": "Send the details and we'll reply on WhatsApp, usually within one working day.",
+    "infoTitle": "Talk to an engineer",
+    "contactPerson": "Eng. Salah Hassan Altoum",
+    "contactRole": "Projects & sales",
+    "phoneLabel": "Phone",
+    "whatsappLabel": "WhatsApp",
+    "locationLabel": "Location",
+    "location": "Riyadh, Saudi Arabia",
+    "hoursLabel": "Working hours",
+    "hours": "Sunday to Thursday, 8:00 AM – 6:00 PM",
+    "form": {
+      "name": "Full name",
+      "phone": "Phone number",
+      "phoneHint": "Saudi mobile, e.g. 05X XXX XXXX",
+      "email": "Email",
+      "optional": "optional",
+      "service": "Service needed",
+      "servicePlaceholder": "Choose a service",
+      "message": "Project details",
+      "messagePlaceholder": "Site type, size, and what you need installed or fixed",
+      "submit": "Send via WhatsApp",
+      "submitting": "Opening WhatsApp…",
+      "success": "WhatsApp opened with your request. Press send in WhatsApp to deliver it.",
+      "required": "required",
+      "options": {
+        "cctv": "CCTV",
+        "pos": "POS",
+        "smartHome": "Smart home",
+        "it": "IT & networking",
+        "other": "Other"
+      },
+      "errors": {
+        "name": "Enter your name (at least 2 characters).",
+        "phone": "Enter a valid phone number, e.g. 0538917030.",
+        "email": "Enter a valid email, or leave it empty.",
+        "service": "Choose the service you need.",
+        "message": "Add a few words about the project (at least 10 characters)."
+      },
+      "whatsappTemplate": "Hello Watermark IT,\nName: {name}\nPhone: {phone}\nEmail: {email}\nService: {service}\nDetails: {message}"
+    }
+  },
+  "Footer": {
+    "about": "IT infrastructure and low current systems for homes and businesses in Riyadh.",
+    "quickLinks": "Company",
+    "servicesTitle": "Services",
+    "contactTitle": "Contact",
+    "vat": "VAT number",
+    "cr": "CR number",
+    "placeholder": "To be added",
+    "rights": "© {year} Watermark IT Company. All rights reserved."
+  },
+  "WhatsApp": {
+    "label": "Chat with us on WhatsApp",
+    "greeting": "Hello Watermark IT, I'd like to ask about your services."
+  }
+}
