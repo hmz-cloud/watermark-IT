@@ -12,6 +12,18 @@ export const site = {
   crNumber: null as string | null,
 } as const;
 
+/**
+ * Canonical origin for SEO (canonical tags, hreflang, sitemap, robots, JSON-LD).
+ * GitHub Pages serves the apex domain and 301s www → apex, so the apex is canonical.
+ * If you switch the Pages custom domain to www, change it here too.
+ */
+export const siteUrl = "https://watermark-it.com";
+
+/** Absolute URL of a path on the canonical origin, e.g. absoluteUrl("/en/"). */
+export function absoluteUrl(path = "/") {
+  return new URL(path, siteUrl).toString();
+}
+
 /** Build a wa.me deep link, optionally with a prefilled message. */
 export function whatsappLink(text?: string) {
   const base = `https://wa.me/${site.whatsappNumber}`;

@@ -8,6 +8,7 @@ import { routing, getDirection } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { siteUrl } from "@/lib/site";
 import "../globals.css";
 
 // Both fonts are exposed as CSS variables; globals.css picks one via :lang().
@@ -31,10 +32,27 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Omit<Props, "children">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale as "en" | "ar", namespace: "Meta" });
+  const tc = await getTranslations({ locale: locale as "en" | "ar", namespace: "Common" });
+  // Trailing slashes match the exported URLs (trailingSlash: true); "/en" would 301.
   return {
+    metadataBase: new URL(siteUrl),
     title: t("title"),
     description: t("description"),
-    alternates: { languages: { en: "/en", ar: "/ar" } },
+    alternates: {
+      canonical: `/${locale}/`,
+      languages: { en: "/en/", ar: "/ar/", "x-default": "/" },
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "website",
+      url: `/${locale}/`,
+      siteName: tc("companyName"),
+      title: t("title"),
+      description: t("description"),
+      locale: locale === "ar" ? "ar_SA" : "en_US",
+      alternateLocale: locale === "ar" ? ["en_US"] : ["ar_SA"],
+    },
+    twitter: { card: "summary", title: t("title"), description: t("description") },
   };
 }
 
