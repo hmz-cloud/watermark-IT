@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteUrl } from "@/lib/site";
+import { shareImage, siteUrl } from "@/lib/site";
 
 // "/" is the language selector (hreflang x-default): it must stay indexable
 // and point at both language versions, or Google may ignore the hreflang set.
@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     languages: { en: "/en/", ar: "/ar/", "x-default": "/" },
   },
   robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Watermark IT",
+    title: "Watermark IT | IT Infrastructure in Riyadh",
+    images: [shareImage("en", "Watermark IT")],
+  },
+  twitter: { card: "summary_large_image", images: [shareImage("en", "Watermark IT").url] },
 };
 
 // Runs before paint: Arabic browsers go to /ar/, everyone else to /en/.

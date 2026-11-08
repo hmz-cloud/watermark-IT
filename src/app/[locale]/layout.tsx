@@ -8,7 +8,7 @@ import { routing, getDirection } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { siteUrl } from "@/lib/site";
+import { shareImage, siteUrl } from "@/lib/site";
 import "../globals.css";
 
 // Both fonts are exposed as CSS variables; globals.css picks one via :lang().
@@ -51,8 +51,14 @@ export async function generateMetadata({ params }: Omit<Props, "children">): Pro
       description: t("description"),
       locale: locale === "ar" ? "ar_SA" : "en_US",
       alternateLocale: locale === "ar" ? ["en_US"] : ["ar_SA"],
+      images: [shareImage(locale, tc("companyName"))],
     },
-    twitter: { card: "summary", title: t("title"), description: t("description") },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: [shareImage(locale, tc("companyName")).url],
+    },
   };
 }
 

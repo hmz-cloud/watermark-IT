@@ -86,17 +86,23 @@ export function Footer() {
       <div className="border-t border-line-dark">
         <Container className="flex flex-col gap-3 py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
           <p>{t("rights", { year: new Date().getFullYear() })}</p>
-          {/* VAT / CR — values live in lib/site.ts; placeholder text until issued. */}
-          <dl className="flex flex-wrap gap-x-6 gap-y-1">
-            <div className="flex gap-1.5">
-              <dt>{t("vat")}:</dt>
-              <dd className="text-white" dir={site.vatNumber ? "ltr" : undefined}>{site.vatNumber ?? t("placeholder")}</dd>
-            </div>
-            <div className="flex gap-1.5">
-              <dt>{t("cr")}:</dt>
-              <dd className="text-white" dir={site.crNumber ? "ltr" : undefined}>{site.crNumber ?? t("placeholder")}</dd>
-            </div>
-          </dl>
+          {/* VAT / CR: shown only once the numbers are set in lib/site.ts — no placeholders on a live site. */}
+          {(site.vatNumber || site.crNumber) && (
+            <dl className="flex flex-wrap gap-x-6 gap-y-1">
+              {site.vatNumber && (
+                <div className="flex gap-1.5">
+                  <dt>{t("vat")}:</dt>
+                  <dd className="text-white" dir="ltr">{site.vatNumber}</dd>
+                </div>
+              )}
+              {site.crNumber && (
+                <div className="flex gap-1.5">
+                  <dt>{t("cr")}:</dt>
+                  <dd className="text-white" dir="ltr">{site.crNumber}</dd>
+                </div>
+              )}
+            </dl>
+          )}
         </Container>
       </div>
     </footer>
