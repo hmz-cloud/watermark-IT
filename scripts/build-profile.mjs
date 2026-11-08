@@ -11,7 +11,11 @@
  *
  * Re-run it after changing any text in the message files or the contact details,
  * then commit the regenerated PDFs. Needs Playwright with Chromium installed
- * (`npx playwright install chromium`) and internet access for Google Fonts.
+ * (`npx playwright install chromium`). Fonts come from the @fontsource packages
+ * (fixed weights, not variable) so they embed as normal fonts that every PDF
+ * viewer can draw; variable fonts embed as Type 3 glyphs, which some phone
+ * viewers show as blank pages. For the same reason the PDF avoids CSS masks
+ * and soft (alpha) gradients.
  */
 import { readFileSync, writeFileSync, mkdirSync, mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -64,22 +68,44 @@ function logoMark(tone = "dark", id = "m") {
   return `<svg viewBox="0 0 64 64" class="mark" aria-hidden="true">
   <defs>
     <radialGradient id="g-${id}" cx="0.62" cy="0.34" r="0.75"><stop offset="0" stop-color="#9AD8F5"/><stop offset="0.35" stop-color="#3B8FDB"/><stop offset="0.75" stop-color="#1F56A8"/><stop offset="1" stop-color="#132A59"/></radialGradient>
-    <radialGradient id="s-${id}" cx="0.68" cy="0.28" r="0.32"><stop offset="0" stop-color="#fff" stop-opacity="0.75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
     <linearGradient id="w-${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${light ? "#9AD8F5" : "#2B6CB0"}"/><stop offset="1" stop-color="${light ? "#5BC0EB" : "#132A59"}"/></linearGradient>
+    <linearGradient id="v-${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${light ? "#6997b7" : "#759fcc"}"/><stop offset="1" stop-color="${light ? "#4088b1" : "#667593"}"/></linearGradient>
   </defs>
   <path d="M9 21C3 33 7 50 22 56c9 3.6 19 2.4 26-2.6C38 57 24 55 15 47 8.6 40.6 6.5 30 9 21Z" fill="url(#w-${id})"/>
-  <path d="M14.5 19.5C10.5 29 13 41.5 23 47.3c6.4 3.7 14 4 20.4 1.4C35 50 26.8 47.6 21 42 15.6 36.6 13.6 27.6 14.5 19.5Z" fill="url(#w-${id})" opacity="0.65"/>
+  <path d="M14.5 19.5C10.5 29 13 41.5 23 47.3c6.4 3.7 14 4 20.4 1.4C35 50 26.8 47.6 21 42 15.6 36.6 13.6 27.6 14.5 19.5Z" fill="url(#v-${id})"/>
   <circle cx="35" cy="33" r="17" fill="url(#g-${id})"/>
-  <path d="M38 19.5c3 .8 5.6 2.6 7.4 5-2 .6-3.4 2-3.2 4 .2 1.8-1.4 2.6-3 2-1.6-.7-2.2-2.4-1.4-4 .8-1.5.2-3.4-1.4-4.2 0-1.2.6-2.2 1.6-2.8Zm4.4 15c1.8-.4 3.8.4 4.6 2-.8 2.8-2.4 5.2-4.6 7-1.2-1.4-1.6-3.2-1-5 .4-1.4.2-2.8 1-4Z" fill="#9AD8F5" opacity="0.35"/>
-  <circle cx="35" cy="33" r="17" fill="url(#s-${id})"/>
+  <path d="M38 19.5c3 .8 5.6 2.6 7.4 5-2 .6-3.4 2-3.2 4 .2 1.8-1.4 2.6-3 2-1.6-.7-2.2-2.4-1.4-4 .8-1.5.2-3.4-1.4-4.2 0-1.2.6-2.2 1.6-2.8Zm4.4 15c1.8-.4 3.8.4 4.6 2-.8 2.8-2.4 5.2-4.6 7-1.2-1.4-1.6-3.2-1-5 .4-1.4.2-2.8 1-4Z" fill="#549ad6"/>
   <g fill="none" stroke="#E6F4FC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 27h6l4-4h4"/><path d="M18.5 33h12"/><path d="M19 39h6l4 4h4"/></g>
   <g fill="#132A59" stroke="#E6F4FC" stroke-width="1.4"><circle cx="34.6" cy="23" r="1.8"/><circle cx="32.4" cy="33" r="1.8"/><circle cx="34.6" cy="43" r="1.8"/></g>
   <g fill="${light ? "#5BC0EB" : "#2B6CB0"}">
     <rect x="44" y="12" width="4" height="4" rx="0.5"/><rect x="49" y="12" width="4" height="4" rx="0.5"/><rect x="49" y="7" width="3.4" height="3.4" rx="0.4"/><rect x="54" y="8" width="3.2" height="3.2" rx="0.4"/>
-    <rect x="54" y="3.4" width="2.6" height="2.6" rx="0.3" opacity="0.8"/><rect x="58.4" y="5" width="2.4" height="2.4" rx="0.3" opacity="0.7"/><rect x="58.6" y="1" width="2" height="2" rx="0.3" opacity="0.55"/><rect x="61.4" y="2.6" width="1.6" height="1.6" rx="0.2" opacity="0.45"/>
+    <rect x="54" y="3.4" width="2.6" height="2.6" rx="0.3" fill="${light ? "#4ba0ca" : "#5589c0"}"/><rect x="58.4" y="5" width="2.4" height="2.4" rx="0.3" fill="${light ? "#4490b9" : "#6b98c8"}"/><rect x="58.6" y="1" width="2" height="2" rx="0.3" fill="${light ? "#3878a0" : "#8aaed4"}"/><rect x="61.4" y="2.6" width="1.6" height="1.6" rx="0.2" fill="${light ? "#306790" : "#a0bddb"}"/>
   </g>
 </svg>`;
 }
+
+/* ---------- Fonts: static weights, embedded so the PDF needs no network ---------- */
+
+const fontFile = (pkg, file) =>
+  readFileSync(join(dirname(require.resolve(`@fontsource/${pkg}/package.json`)), "files", file)).toString("base64");
+const face = (family, pkg, file, weight) =>
+  `@font-face{font-family:"${family}";font-weight:${weight};font-style:normal;src:url(data:font/woff2;base64,${fontFile(pkg, file)}) format("woff2");}`;
+const fontFaces = [
+  ...[400, 500, 600, 700].map((w) => face("Inter", "inter", `inter-latin-${w}-normal.woff2`, w)),
+  ...[400, 500, 600, 700].map((w) => face("IBM Plex Sans Arabic", "ibm-plex-sans-arabic", `ibm-plex-sans-arabic-arabic-${w}-normal.woff2`, w)),
+  face("JetBrains Mono", "jetbrains-mono", "jetbrains-mono-latin-600-normal.woff2", 600),
+].join("\n");
+
+/* Opaque vector grid for the navy pages (a CSS gradient grid fades to transparent, which becomes a PDF soft mask). */
+// Plain vector lines: an SVG <pattern> is rasterised into an image with an alpha channel.
+const gridPath = (() => {
+  const W = 794, H = 1123, step = 34; // A4 at 96 dpi, ~9 mm cells
+  let d = "";
+  for (let x = step; x < W; x += step) d += `M${x} 0V${H}`;
+  for (let y = step; y < H; y += step) d += `M0 ${y}H${W}`;
+  return d;
+})();
+const grid = () => `<svg class="grid" viewBox="0 0 794 1123" preserveAspectRatio="xMinYMin slice" aria-hidden="true"><path d="${gridPath}" fill="none" stroke="#152c5e" stroke-width="1"/></svg>`;
 
 /* ---------- Styles ---------- */
 
@@ -105,10 +131,8 @@ svg { display: block; flex-shrink: 0; }
 .inner { flex: 1; display: flex; flex-direction: column; gap: 9mm; padding: 18mm 18mm 0; }
 .navy { background: var(--navy-900); color: var(--on-navy); }
 .navy h1, .navy h2, .navy h3 { color: #fff; }
-.grid-bg::before { content: ""; position: absolute; inset: 0; opacity: .35; pointer-events: none;
-  background-image: linear-gradient(var(--navy-700) 1px, transparent 1px), linear-gradient(90deg, var(--navy-700) 1px, transparent 1px);
-  background-size: 9mm 9mm; -webkit-mask-image: radial-gradient(ellipse at 75% 30%, #000, transparent 70%); mask-image: radial-gradient(ellipse at 75% 30%, #000, transparent 70%); }
-:lang(ar) .grid-bg::before { -webkit-mask-image: radial-gradient(ellipse at 25% 30%, #000, transparent 70%); mask-image: radial-gradient(ellipse at 25% 30%, #000, transparent 70%); }
+/* Engineering grid: opaque hairlines (no masks or transparency, which some PDF viewers render blank). */
+.grid { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 
 .eyebrow { font-size: 9pt; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); }
 :lang(ar) .eyebrow { letter-spacing: 0; font-size: 10.5pt; }
@@ -231,7 +255,8 @@ function build(locale, { toolbar = "" } = {}) {
   const foot = (n) => `<footer class="foot"><span><b>${esc(company)}</b> · ${esc(P.docTitle)}</span><span class="num ltr">${String(n).padStart(2, "0")} / ${String(pages).padStart(2, "0")}</span></footer>`;
 
   const cover = `
-<section class="sheet navy grid-bg cover">
+<section class="sheet navy cover">
+  ${grid()}
   <div class="inner">
     <div class="brandline">${logoMark("light", "c1")}<div><div class="name">${esc(company)}</div><div class="tag">${esc(m.Common.tagline)}</div></div></div>
     <div>
@@ -302,7 +327,8 @@ function build(locale, { toolbar = "" } = {}) {
   const row = (I, label, value) => `<div class="row"><span class="ico">${icon(I, 20)}</span><div><div class="lbl">${esc(label)}</div><div class="val">${value}</div></div></div>`;
   const C = m.Contact;
   const contact = `
-<section class="sheet navy grid-bg contact">
+<section class="sheet navy contact">
+  ${grid()}
   <div class="inner">
     <header><p class="eyebrow">${esc(P.contactEyebrow)}</p><h2 class="h2">${esc(P.contactTitle)}</h2><p class="lead">${esc(P.contactBody)}</p></header>
     <div class="rows">
@@ -319,11 +345,8 @@ function build(locale, { toolbar = "" } = {}) {
   </div>
 </section>`;
 
-  const fonts = "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap";
   const head = `<title>${esc(company)} · ${esc(P.docTitle)}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="${fonts}">
-<style>${css}</style>`;
+<style>${fontFaces}${css}</style>`;
   const body = `${toolbar}${cover}${about}${servicesPage}${process}${contact}`;
   return { head, body, dir, title: `${company} · ${P.docTitle}` };
 }
