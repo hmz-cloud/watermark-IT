@@ -144,5 +144,60 @@
   "WhatsApp": {
     "label": "Chat with us on WhatsApp",
     "greeting": "Hello Watermark IT, I'd like to ask about your services."
+  },
+  "Profile": {
+    "download": "Download company profile",
+    "downloadMeta": "PDF",
+    "docTitle": "Company Profile",
+    "eyebrow": "Company Profile",
+    "aboutEyebrow": "About us",
+    "aboutTitle": "Who we are",
+    "aboutBody1": "Watermark IT is an IT infrastructure company based in Riyadh. We plan, install and support the networks, low current systems and devices that businesses rely on every day.",
+    "aboutBody2": "Our consultants, engineers and technicians take each project from the first site survey through design, supply, installation and testing, and they stay on as your support line after handover.",
+    "missionTitle": "Mission",
+    "mission": "To give every client IT infrastructure that is planned properly, built to code and supported long after delivery.",
+    "visionTitle": "Vision",
+    "vision": "To be the infrastructure partner businesses in Riyadh call first, for the cabling in their walls and the devices on their desks.",
+    "valuesTitle": "Why clients choose us",
+    "servicesEyebrow": "Services",
+    "processEyebrow": "How we work",
+    "processTitle": "How a project runs",
+    "process": {
+      "survey": {
+        "title": "Site survey",
+        "description": "We visit the site, take measurements and agree on what you need. The survey is free."
+      },
+      "design": {
+        "title": "Design and quotation",
+        "description": "A layout, an equipment list and a clear quotation, signed off by an engineer."
+      },
+      "supply": {
+        "title": "Supply",
+        "description": "Hardware from trusted brands, ordered to the approved design."
+      },
+      "install": {
+        "title": "Installation",
+        "description": "Cabling routed, labelled and terminated to code; devices mounted and configured."
+      },
+      "test": {
+        "title": "Testing and handover",
+        "description": "Every point tested, documented and walked through with your team."
+      },
+      "support": {
+        "title": "Support",
+        "description": "On-site and remote help, preventive maintenance and annual contracts."
+      }
+    },
+    "sectorsTitle": "Who we work with",
+    "sectors": {
+      "offices": "Offices and corporate sites",
+      "retail": "Retail stores",
+      "restaurants": "Restaurants and cafés",
+      "homes": "Villas and residences"
+    },
+    "contactEyebrow": "Contact",
+    "contactTitle": "Let's talk about your project",
+    "contactBody": "Book a free site survey or ask for a quote. We reply on WhatsApp, usually within one working day.",
+    "page": "Page"
   }
 }

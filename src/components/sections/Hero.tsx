@@ -1,16 +1,18 @@
-import { useTranslations } from "next-intl";
-import { CircleCheck, MapPin, MessageCircle } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { CircleCheck, FileDown, MapPin, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { buttonClasses } from "@/components/ui/Button";
 import { HeroSchematic } from "./HeroSchematic";
-import { sectionIds, whatsappLink } from "@/lib/site";
+import { profilePdfHref, sectionIds, whatsappLink } from "@/lib/site";
 
 const points = ["survey", "engineers", "bilingual"] as const;
 
 export function Hero() {
   const t = useTranslations("Hero");
   const tw = useTranslations("WhatsApp");
+  const tp = useTranslations("Profile");
+  const locale = useLocale();
 
   return (
     <section aria-labelledby="hero-title" className="on-navy relative isolate overflow-hidden bg-navy-900">
@@ -55,6 +57,16 @@ export function Hero() {
               {t("secondaryCta")}
             </a>
           </div>
+
+          <a
+            href={profilePdfHref(locale)}
+            download
+            className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-cyan underline-offset-4 transition-colors duration-200 hover:text-cyan-300 hover:underline"
+          >
+            <FileDown className="size-4" aria-hidden="true" />
+            {tp("download")}
+            <span className="text-on-navy">({tp("downloadMeta")})</span>
+          </a>
 
           <ul className="mt-10 grid gap-3 border-t border-line-dark pt-6 text-sm text-on-navy sm:grid-cols-3 sm:gap-6">
             {points.map((key) => (
