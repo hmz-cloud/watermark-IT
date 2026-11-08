@@ -14,10 +14,11 @@ export const site = {
 
 /**
  * Canonical origin for SEO (canonical tags, hreflang, sitemap, robots, JSON-LD).
- * GitHub Pages serves the apex domain and 301s www → apex, so the apex is canonical.
- * If you switch the Pages custom domain to www, change it here too.
+ * Must match the custom domain set in GitHub → Settings → Pages. The www host is
+ * primary (its CNAME points at GitHub Pages) and Pages 301s the apex → www.
+ * If you ever change the Pages custom domain, change it here too.
  */
-export const siteUrl = "https://watermark-it.com";
+export const siteUrl = "https://www.watermark-it.com";
 
 /** Absolute URL of a path on the canonical origin, e.g. absoluteUrl("/en/"). */
 export function absoluteUrl(path = "/") {
