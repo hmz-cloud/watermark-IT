@@ -22,6 +22,8 @@ const basePath = process.env.PAGES_BASE_PATH || "";
 const nextConfig: NextConfig = {
   output: "export",
   basePath,
+  // Lets components build URLs to files in /public (e.g. the profile PDFs), which basePath doesn't rewrite.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   // /en/ → out/en/index.html, which GitHub Pages serves without extra config.
   trailingSlash: true,
   turbopack: {

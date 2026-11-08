@@ -1,10 +1,10 @@
-import { useTranslations } from "next-intl";
-import { Phone, MessageCircle, MapPin } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { Phone, MessageCircle, MapPin, FileDown } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/Container";
 import { services } from "@/components/sections/servicesData";
-import { site, sectionIds, whatsappLink } from "@/lib/site";
+import { site, sectionIds, whatsappLink, profilePdfHref } from "@/lib/site";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -12,6 +12,8 @@ export function Footer() {
   const ts = useTranslations("Services.items");
   const tc = useTranslations("Contact");
   const tcommon = useTranslations("Common");
+  const tp = useTranslations("Profile");
+  const locale = useLocale();
 
   const linkClass = "inline-block py-1 text-on-navy transition-colors duration-200 hover:text-cyan";
 
@@ -29,6 +31,12 @@ export function Footer() {
             <li><Link href="/" className={linkClass}>{tn("home")}</Link></li>
             <li><Link href={{ pathname: "/", hash: sectionIds.whyUs }} className={linkClass}>{tn("whyUs")}</Link></li>
             <li><Link href={{ pathname: "/", hash: sectionIds.contact }} className={linkClass}>{tn("getQuote")}</Link></li>
+            <li>
+              <a href={profilePdfHref(locale)} download className={`inline-flex items-center gap-2 ${linkClass}`}>
+                <FileDown className="size-4" aria-hidden="true" />
+                {tp("download")}
+              </a>
+            </li>
           </ul>
         </nav>
 

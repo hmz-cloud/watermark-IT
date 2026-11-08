@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const redirectScript = `
   try {
     var lang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
-    location.replace(/^ar\b/i.test(lang) ? "./ar/" : "./en/");
+    location.replace(/^ar\\b/i.test(lang) ? "./ar/" : "./en/");
   } catch (e) { location.replace("./en/"); }
 `;
 

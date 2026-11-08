@@ -10,6 +10,7 @@ npm install
 npm run dev      # http://localhost:3000  → redirects to /en
 npm run build    # production build (prerenders /en and /ar)
 npm run lint
+npm run profile  # regenerate the company profile PDFs in public/profile/
 ```
 
 ## Where things live
@@ -23,6 +24,7 @@ npm run lint
 | Locale redirect (Next 16 "proxy", formerly middleware) | `src/proxy.ts` |
 | Page sections | `src/components/sections/*` |
 | Navbar, footer, language switch | `src/components/layout/*` |
+| Company profile PDFs (EN/AR) and their generator | `public/profile/`, `scripts/build-profile.mjs` (text from the `Profile` keys in `messages/*.json`) |
 | Logo (vector redraw of the business-card mark; swap in the designer's SVG when available) | `src/components/brand/Logo.tsx` |
 
 ## Notes
@@ -31,3 +33,4 @@ npm run lint
 - **Contact form:** there is no backend. Submitting opens WhatsApp with the request prefilled. To send email or post to a CRM instead, replace `onSubmit` in `src/components/sections/ContactForm.tsx`.
 - **next-intl plugin:** not used, because Windows Application Control blocks the `@swc/core` binary it loads. `next.config.ts` sets the `next-intl/config` alias by hand. See the comment there to switch back.
 - **Adding a service:** add an entry to `src/components/sections/servicesData.ts` and matching `Services.items.<key>` text in both message files.
+- **Company profile PDF:** the hero and footer link to `public/profile/watermark-it-company-profile-{en,ar}.pdf`. The PDFs are committed, not built in CI. After changing site copy, contact details or VAT/CR numbers, run `npm run profile` and commit the new PDFs. It needs Playwright with Chromium (`npx playwright install chromium`) and internet access for Google Fonts. VAT/CR appear on the back page once they are set in `src/lib/site.ts`.
