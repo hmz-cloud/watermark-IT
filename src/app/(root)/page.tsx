@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
+import { siteUrl } from "@/lib/site";
 
+// "/" is the language selector (hreflang x-default): it must stay indexable
+// and point at both language versions, or Google may ignore the hreflang set.
 export const metadata: Metadata = {
-  title: "Watermark IT",
-  robots: { index: false },
+  metadataBase: new URL(siteUrl),
+  title: "Watermark IT | IT Infrastructure in Riyadh",
+  description:
+    "IT infrastructure and low current systems in Riyadh: network cabling, CCTV, access control, POS and smart homes. English and Arabic.",
+  alternates: {
+    canonical: "/",
+    languages: { en: "/en/", ar: "/ar/", "x-default": "/" },
+  },
+  robots: { index: true, follow: true },
 };
 
 // Runs before paint: Arabic browsers go to /ar/, everyone else to /en/.

@@ -5,6 +5,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Contact } from "@/components/sections/Contact";
+import { BusinessJsonLd } from "@/components/seo/BusinessJsonLd";
 
 export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = use(params);
@@ -12,6 +13,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
 
   return (
     <>
+      <BusinessJsonLd locale={locale} />
       <Hero />
       <Services />
       <WhyUs />
