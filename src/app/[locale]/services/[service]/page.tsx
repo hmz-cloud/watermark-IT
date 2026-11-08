@@ -20,7 +20,7 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import { buttonClasses } from "@/components/ui/Button";
 import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { serviceBySlug, servicePath, services } from "@/components/sections/servicesData";
-import { sectionIds, siteUrl, whatsappLink } from "@/lib/site";
+import { sectionIds, shareImage, siteUrl, whatsappLink } from "@/lib/site";
 
 type Params = { locale: string; service: string };
 type QA = { q: string; a: string };
@@ -58,8 +58,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       description: t("metaDescription"),
       locale: locale === "ar" ? "ar_SA" : "en_US",
       alternateLocale: locale === "ar" ? ["en_US"] : ["ar_SA"],
+      images: [shareImage(locale, tc("companyName"))],
     },
-    twitter: { card: "summary", title: t("metaTitle"), description: t("metaDescription") },
+    twitter: {
+      card: "summary_large_image",
+      title: t("metaTitle"),
+      description: t("metaDescription"),
+      images: [shareImage(locale, tc("companyName")).url],
+    },
   };
 }
 

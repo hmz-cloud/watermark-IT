@@ -20,6 +20,7 @@ npm run profile  # regenerate the company profile PDFs in public/profile/
 | All visible text | `messages/en.json`, `messages/ar.json` (keys type-checked against `en.json`) |
 | Phone, WhatsApp, VAT / CR numbers, canonical site URL (`siteUrl`) | `src/lib/site.ts` |
 | SEO: robots.txt, sitemap.xml, structured data | `src/app/robots.ts`, `src/app/sitemap.ts`, `src/components/seo/BusinessJsonLd.tsx`; titles and descriptions in `Meta` of the message files |
+| Social share images (EN/AR, 1200×630) | `public/og/`, regenerated with `npm run og` (`scripts/build-og.mjs`) after changing the name, tagline, hero title or service names |
 | Brand colours, fonts, radii, motion | `src/app/globals.css` (`@theme` block) |
 | Locales and RTL rule | `src/i18n/routing.ts` |
 | Locale redirect (Next 16 "proxy", formerly middleware) | `src/proxy.ts` |
