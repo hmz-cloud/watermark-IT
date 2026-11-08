@@ -145,6 +145,154 @@
     "label": "Chat with us on WhatsApp",
     "greeting": "Hello Watermark IT, I'd like to ask about your services."
   },
+  "ServicePage": {
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumbHome": "Home",
+    "breadcrumbServices": "Services",
+    "includedTitle": "What's included",
+    "faqTitle": "Questions we're asked",
+    "faqShared": [
+      { "q": "Do you visit the site before quoting?", "a": "Yes. Every quote starts with a free site survey, so the design and price fit your building." },
+      { "q": "How do I get a quote?", "a": "Send us the details on WhatsApp or through the form on our homepage. We usually reply within one working day." }
+    ],
+    "otherTitle": "Other services",
+    "allServices": "See all services",
+    "ctaTitle": "Book a free site survey",
+    "ctaBody": "Tell us about the site and what you need. We reply on WhatsApp, usually within one working day.",
+    "ctaQuote": "Get a quote",
+    "ctaWhatsapp": "Chat on WhatsApp",
+    "whatsappTemplate": "Hello Watermark IT, I'd like a quote for {service}."
+  },
+  "ServicePages": {
+    "networking": {
+      "metaTitle": "Network Cabling & IT Networking in Riyadh | Watermark IT",
+      "metaDescription": "Structured cabling, switches, Wi-Fi and server rooms for Riyadh businesses, designed and installed by certified engineers. Free site survey.",
+      "h1": "Network cabling and IT networking in Riyadh",
+      "intro": "We plan and install the network your business runs on: structured cabling to every desk, switches and Wi-Fi that cover the whole site, and a server room that is labelled and easy to maintain. An engineer designs and signs off every installation.",
+      "includes": [
+        { "title": "Structured cabling", "description": "Copper and fibre runs to every point, routed, labelled and tested before handover." },
+        { "title": "Switches and routers", "description": "Network equipment sized for the users you have today, with room to grow." },
+        { "title": "Wi-Fi coverage", "description": "Access points placed from the site survey so the signal reaches every room." },
+        { "title": "Server rooms and racks", "description": "Racks, patch panels and cable management that keep the room tidy and easy to service." }
+      ],
+      "faqs": [
+        { "q": "Can you add to or tidy up an existing network?", "a": "Yes. We survey what is already installed, then extend, re-cable or reorganise it rather than starting from scratch where that makes sense." },
+        { "q": "Do you label and document the cabling?", "a": "Yes. Every point is labelled and tested, and you receive a record of what is connected where." }
+      ]
+    },
+    "elv": {
+      "metaTitle": "Low Current & ELV Systems in Riyadh | Watermark IT",
+      "metaDescription": "Fire alarm, public address, intercom and data systems for buildings in Riyadh, routed and labelled to code by certified engineers. Free site survey.",
+      "h1": "Low current and ELV systems in Riyadh",
+      "intro": "Low current systems carry the signals a building depends on: fire alarms, public address, intercoms and data. We design the routes, install the cabling and devices, and label everything to code so it is easy to inspect and maintain.",
+      "includes": [
+        { "title": "Fire alarm systems", "description": "Detectors, call points and panels installed and wired to the approved design." },
+        { "title": "Public address", "description": "Speakers and amplifiers for announcements and background audio across the site." },
+        { "title": "Intercom", "description": "Door and internal intercom so visitors and staff can reach the right person." },
+        { "title": "Containment and routing", "description": "Trays, conduits and labelled cable routes that keep low current separate and tidy." }
+      ],
+      "faqs": [
+        { "q": "Do you work on new buildings or existing ones?", "a": "Both. We install during fit-out, or add and upgrade systems in a building that is already in use." },
+        { "q": "Can low current systems be combined with CCTV and access control?", "a": "Yes. We plan the cabling for all of them together, so one team installs and supports the whole set." }
+      ]
+    },
+    "cctv": {
+      "metaTitle": "CCTV Installation in Riyadh | Watermark IT",
+      "metaDescription": "IP camera systems for Riyadh businesses and homes: camera placement, NVR recording and remote viewing on your phone. Free site survey and quote.",
+      "h1": "CCTV installation in Riyadh",
+      "intro": "We design and install IP camera systems that show what you need to see: entrances, cash points, stock and parking. Recordings are kept on a network video recorder (NVR) on site, and you can watch live or recorded footage from your phone.",
+      "includes": [
+        { "title": "Camera placement", "description": "Positions and lenses chosen during the site survey to cover entrances, cash points and blind spots." },
+        { "title": "NVR recording", "description": "Recorders sized for the number of cameras and how many days of footage you want to keep." },
+        { "title": "Remote viewing", "description": "Live and recorded footage on your phone, set up and tested with you before handover." },
+        { "title": "Cabling and power", "description": "Neat, protected cable runs to each camera, labelled for future maintenance." }
+      ],
+      "faqs": [
+        { "q": "Can I watch the cameras from my phone?", "a": "Yes. We set up the app on your phone at handover and check that live and recorded video both work." },
+        { "q": "How long are recordings kept?", "a": "That depends on the number of cameras and the recorder's storage. We size it to the number of days you ask for." }
+      ]
+    },
+    "access": {
+      "metaTitle": "Access Control Systems in Riyadh | Watermark IT",
+      "metaDescription": "Card, fingerprint and face recognition door access with attendance reports for Riyadh offices, shops and buildings. Free site survey.",
+      "h1": "Access control and attendance systems in Riyadh",
+      "intro": "Decide who can open which door, and when. We install card, fingerprint and face readers with electric locks, and connect them to software that gives you attendance reports for your staff.",
+      "includes": [
+        { "title": "Readers", "description": "Card, fingerprint or face readers chosen for each door and how busy it is." },
+        { "title": "Locks and exit buttons", "description": "Electric locks, door contacts and exit buttons installed and tested together." },
+        { "title": "Attendance reports", "description": "Staff clock-in and clock-out records you can export for payroll." },
+        { "title": "Access rules", "description": "Permissions by person, door and time, set up with you at handover." }
+      ],
+      "faqs": [
+        { "q": "Can the system record staff attendance?", "a": "Yes. The readers that open doors also record clock-in and clock-out times, and the software produces attendance reports." },
+        { "q": "What happens to the doors if the power goes off?", "a": "We agree how each door behaves with you during design, so exits stay safe and secure doors stay locked as needed." }
+      ]
+    },
+    "pos": {
+      "metaTitle": "POS Systems for Retail & Restaurants, Riyadh | Watermark IT",
+      "metaDescription": "Point-of-sale terminals, receipt printers and barcode scanners for shops and restaurants in Riyadh, installed, connected and supported.",
+      "h1": "POS systems for retail and restaurants in Riyadh",
+      "intro": "We supply and install the point-of-sale hardware a counter needs: terminals, receipt printers, barcode scanners and cash drawers, connected to your network and tested before you open.",
+      "includes": [
+        { "title": "POS terminals", "description": "Counter terminals installed and set up at each till." },
+        { "title": "Receipt and kitchen printers", "description": "Printers at the counter and in the kitchen, connected so orders reach the right place." },
+        { "title": "Scanners and cash drawers", "description": "Accessories installed and tested with each terminal." },
+        { "title": "Network and support", "description": "A reliable connection for every till, and support when something stops working." }
+      ],
+      "faqs": [
+        { "q": "Do you supply the hardware or only install it?", "a": "Both. We supply terminals, printers, scanners and drawers, or install equipment you already have." },
+        { "q": "Can you set up a kitchen printer for a restaurant?", "a": "Yes. We install and connect kitchen printers so orders print where they are prepared." }
+      ]
+    },
+    "smartHome": {
+      "metaTitle": "Smart Home Installation in Riyadh | Watermark IT",
+      "metaDescription": "Lighting, air conditioning, curtains and security controlled from one app. Smart home systems for villas and apartments in Riyadh. Free survey.",
+      "h1": "Smart home installation in Riyadh",
+      "intro": "Control lighting, air conditioning, curtains and security from one app, at home or away. We plan the system around how your family uses the house, install it, and show you how everything works.",
+      "includes": [
+        { "title": "Lighting control", "description": "Scenes and schedules for each room, from wall switches or your phone." },
+        { "title": "Climate", "description": "Air conditioning control by room and by time of day." },
+        { "title": "Curtains and blinds", "description": "Motorised curtains that open and close on a schedule or a tap." },
+        { "title": "Security", "description": "Cameras, door locks and intercom in the same app." }
+      ],
+      "faqs": [
+        { "q": "Can a smart home system be added to a finished villa?", "a": "Often, yes. We survey the house first and tell you what can be added without major works." },
+        { "q": "Is everything controlled from one app?", "a": "Yes, that is the aim: lighting, climate, curtains and security together, set up and tested with you at handover." }
+      ]
+    },
+    "support": {
+      "metaTitle": "IT Support & Maintenance Contracts in Riyadh | Watermark IT",
+      "metaDescription": "On-site and remote IT support, preventive maintenance and annual contracts for businesses in Riyadh. Support in Arabic and English.",
+      "h1": "IT support and maintenance in Riyadh",
+      "intro": "When something stops working, you need someone who knows your systems. We provide on-site and remote support, preventive maintenance and annual contracts, with a direct line to the engineer who looks after your site.",
+      "includes": [
+        { "title": "On-site support", "description": "An engineer or technician visits to fix problems where they happen." },
+        { "title": "Remote support", "description": "Many problems solved remotely, without waiting for a visit." },
+        { "title": "Preventive maintenance", "description": "Scheduled checks of networks, cameras and devices to catch problems early." },
+        { "title": "Annual contracts", "description": "A fixed scope and visit plan agreed for the year." }
+      ],
+      "faqs": [
+        { "q": "Do you support systems you did not install?", "a": "Yes. We start with a site visit to understand what is installed, then agree what we will support." },
+        { "q": "Is support available in Arabic and English?", "a": "Yes. Our team supports you in both languages." }
+      ]
+    },
+    "hardware": {
+      "metaTitle": "IT Hardware Supply in Riyadh | Watermark IT",
+      "metaDescription": "Computers, servers, printers and network equipment from trusted brands for Riyadh businesses, supplied, installed and configured.",
+      "h1": "IT hardware supply in Riyadh",
+      "intro": "We supply computers, servers, printers and network equipment from trusted brands, and we install and configure them so they work with the rest of your systems from day one.",
+      "includes": [
+        { "title": "Computers and laptops", "description": "Desktops and laptops set up and ready to use." },
+        { "title": "Servers and storage", "description": "Servers and storage sized for your workload." },
+        { "title": "Printers", "description": "Office printers shared on the network for the whole team." },
+        { "title": "Network equipment", "description": "Switches, routers and access points that fit your network." }
+      ],
+      "faqs": [
+        { "q": "Do you install the hardware you supply?", "a": "Yes. We deliver, install and configure it, and connect it to your network." },
+        { "q": "Can you advise what to buy?", "a": "Yes. We recommend equipment based on what your team needs and what is already installed." }
+      ]
+    }
+  },
   "Profile": {
     "download": "Download company profile",
     "downloadMeta": "PDF",

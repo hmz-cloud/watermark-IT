@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard } from "@/components/ui/ServiceCard";
-import { services } from "./servicesData";
+import { servicePath, services } from "./servicesData";
 import { sectionIds } from "@/lib/site";
 
 /**
@@ -19,12 +19,13 @@ export function Services() {
         <SectionHeading id="services-title" title={t("title")} subtitle={t("subtitle")} />
 
         <ul className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-panel)] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ key, icon }) => (
+          {services.map(({ key, slug, icon }) => (
             <li key={key} className="bg-white">
               <ServiceCard
                 icon={icon}
                 title={t(`items.${key}.title`)}
                 description={t(`items.${key}.description`)}
+                href={servicePath(slug)}
               />
             </li>
           ))}
