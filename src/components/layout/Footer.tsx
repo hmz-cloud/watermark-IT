@@ -3,7 +3,7 @@ import { Phone, MessageCircle, MapPin, FileDown } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/Container";
-import { services } from "@/components/sections/servicesData";
+import { servicePath, services } from "@/components/sections/servicesData";
 import { site, sectionIds, whatsappLink, profilePdfHref } from "@/lib/site";
 
 export function Footer() {
@@ -43,9 +43,9 @@ export function Footer() {
         <nav aria-labelledby="footer-services" className="lg:col-span-3">
           <h2 id="footer-services" className="font-semibold text-white">{t("servicesTitle")}</h2>
           <ul className="mt-4 grid grid-cols-1 gap-2.5">
-            {services.map(({ key }) => (
+            {services.map(({ key, slug }) => (
               <li key={key}>
-                <Link href={{ pathname: "/", hash: sectionIds.services }} className={linkClass}>
+                <Link href={servicePath(slug)} className={linkClass}>
                   {ts(`${key}.title`)}
                 </Link>
               </li>
